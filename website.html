@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanguard Assurance - Reliable Insurance Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Custom Font */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Smooth animations */
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Diagonal sections with better spacing */
+    section {
+      position: relative;
+      padding: 140px 0 100px 0;
+    }
+
+    /* Professional gradient backgrounds */
+    #home { 
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%); 
+      padding-bottom: 180px;
+    }
+    #personal { 
+      background: linear-gradient(135deg, #374151 0%, #4B5563 50%, #6B7280 100%);
+      clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); 
+      margin-top: -120px;
+      padding-top: 180px;
+      padding-bottom: 180px;
+    }
+    #corporate { 
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%);
+      clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); 
+      margin-top: -120px;
+      padding-top: 180px;
+      padding-bottom: 180px;
+    }
+    #about { 
+      background: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #F87171 100%);
+      clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); 
+      margin-top: -120px;
+      padding-top: 180px;
+      padding-bottom: 180px;
+    }
+    #resources { 
+      background: linear-gradient(135deg, #374151 0%, #4B5563 50%, #6B7280 100%);
+      clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); 
+      margin-top: -120px;
+      padding-top: 180px;
+      padding-bottom: 180px;
+    }
+    #contact { 
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%);
+      clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%); 
+      margin-top: -120px;
+      padding-top: 180px;
+    }
+
+    /* Text styling */
+    .section-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      color: white;
+    }
+
+    /* Professional header */
+    header {
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(20px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    header.scrolled {
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    /* Logo animation */
+    .logo-container {
+      transition: transform 0.3s ease;
+    }
+
+    .logo-container:hover {
+      transform: scale(1.05);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    /* Enhanced card hover effects */
+    .service-card {
+      position: relative;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+      border-radius: 1rem;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: -1;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, #3B82F6, #8B5CF6, #EC4899);
+      border-radius: 1rem;
+      opacity: 0;
+      z-index: -2;
+      transition: opacity 0.5s ease;
+      filter: blur(10px);
+    }
+
+    .service-card:hover {
+      transform: translateY(-20px) scale(1.03) rotateX(2deg);
+      box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(59, 130, 246, 0.3),
+        0 0 40px rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.8);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card:hover::after {
+      opacity: 0.6;
+    }
+
+    .service-card:hover .card-icon {
+      transform: scale(1.2) rotateY(360deg);
+      filter: drop-shadow(0 10px 20px rgba(59, 130, 246, 0.4));
+    }
+
+    .card-icon {
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-block;
+    }
+
+    .service-card:hover .learn-more-arrow {
+      transform: translateX(8px);
+    }
+
+    /* Button hover effects */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn-primary:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Stat counter animation */
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .stat-number {
+      animation: countUp 1s ease-out;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    /* Form focus effects */
+    .form-input {
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+    }
+
+    /* Custom scrollbar */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #3B82F6 #0F172A;
+    }
+
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0F172A;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #3B82F6, #1E3A8A);
+      border-radius: 6px;
+      border: 2px solid #0F172A;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #60A5FA, #3B82F6);
+    }
+
+    /* Icon animations */
+    .icon-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Glassmorphism effect */
+    .glass-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+      );
+      transform: rotate(45deg);
+      transition: all 0.6s ease;
+    }
+
+    .glass-card:hover::before {
+      left: 100%;
+    }
+
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(251, 191, 36, 0.5);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(251, 191, 36, 0.3),
+        0 0 30px rgba(251, 191, 36, 0.2);
+    }
+
+    .glass-card:hover .glass-icon {
+      transform: scale(1.15) rotate(5deg);
+      filter: drop-shadow(0 5px 15px rgba(251, 191, 36, 0.5));
+    }
+
+    .glass-icon {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-block;
+    }
+
+    /* Pulse animation for CTA */
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+      50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    }
+
+    .pulse-button {
+      animation: pulse 2s infinite;
+    }
+
+    /* Navigation link underline effect */
+    .nav-link {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FBBF24;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Section title underline */
+    .section-title {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 16px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #FBBF24, #F59E0B);
+      border-radius: 2px;
+    }
+
+    /* Section backgrounds */
+    #home { background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%); clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%); padding-bottom: 180px; }
+    #personal { background: linear-gradient(135deg, #374151 0%, #4B5563 50%, #6B7280 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #corporate { background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #testimonials { background: linear-gradient(135deg, #374151 0%, #4B5563 50%, #6B7280 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #accolades { background: linear-gradient(135deg, #059669 0%, #10B981 50%, #34D399 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #news { background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #about { background: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #F87171 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #resources { background: linear-gradient(135deg, #374151 0%, #4B5563 50%, #6B7280 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #contact { background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%); clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%); margin-top: -120px; padding-top: 180px; }
+    
+    .section-content { max-width: 1280px; margin: 0 auto; padding: 0 24px; color: white; }
+
+        /* Testimonial cards */
+    .testimonial-card { position: relative; background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .testimonial-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.12); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+
+        /* News cards */
+    .news-card { position: relative; background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; overflow: hidden; }
+    .news-card::after { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 0; background: linear-gradient(180deg, #3B82F6, #60A5FA); transition: height 0.4s ease; }
+    .news-card:hover { transform: translateX(5px); background: rgba(255, 255, 255, 0.12); }
+    .news-card:hover::after { height: 100%; }
+
+  </style>
+</head>
+<body class="font-sans text-white">
+
+  <!-- HEADER -->
+  <header id="header" class="fixed top-0 w-full z-50 px-4 md:px-8 py-5">
+    <div class="flex justify-between items-center max-w-7xl mx-auto">
+      <div class="logo-container flex items-center space-x-4">
+        <img src="Logos/logo_dark.png" alt="Vanguard Assurance Logo" class="h-16 w-auto md:h-20 lg:h-24 drop-shadow-2xl"/>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:block">
+        <ul class="flex items-center space-x-10 text-base font-medium tracking-wide">
+          <li><a href="#home" class="nav-link hover:text-yellow-400 transition">Home</a></li>
+          <li><a href="#personal" class="nav-link hover:text-yellow-400 transition">Personal</a></li>
+          <li><a href="#corporate" class="nav-link hover:text-yellow-400 transition">Corporate</a></li>
+          <li><a href="#about" class="nav-link hover:text-yellow-400 transition">About</a></li>
+          <li><a href="#resources" class="nav-link hover:text-yellow-400 transition">Resources</a></li>
+          <li><a href="#contact" class="bg-gradient-to-r from-red-500 to-red-600 px-6 py-2.5 rounded-lg hover:from-red-600 hover:to-red-700 transition font-semibold shadow-lg">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none hover:text-yellow-400 transition">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-gradient-to-b from-gray-900 to-gray-800 z-40 lg:hidden shadow-2xl">
+    <div class="p-8">
+      <button id="close-menu" class="text-white mb-12 focus:outline-none hover:text-yellow-400 transition">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <ul class="space-y-8 text-lg font-semibold">
+        <li><a href="#home" class="block hover:text-yellow-400 transition mobile-link hover:translate-x-2 inline-block">Home</a></li>
+        <li><a href="#personal" class="block hover:text-yellow-400 transition mobile-link hover:translate-x-2 inline-block">Personal</a></li>
+        <li><a href="#corporate" class="block hover:text-yellow-400 transition mobile-link hover:translate-x-2 inline-block">Corporate</a></li>
+        <li><a href="#about" class="block hover:text-yellow-400 transition mobile-link hover:translate-x-2 inline-block">About Us</a></li>
+        <li><a href="#resources" class="block hover:text-yellow-400 transition mobile-link hover:translate-x-2 inline-block">Resources</a></li>
+        <li><a href="#contact" class="block hover:text-yellow-400 transition mobile-link hover:translate-x-2 inline-block">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="section-content text-center pt-40 fade-in-up">
+      <div class="mb-6 inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+        <span class="text-sm font-semibold">🏆 Ghana's Trusted Insurance Provider</span>
+      </div>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
+        Reliable Insurance,<br/>
+        <span class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Peace of Mind</span>
+      </h1>
+      <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-gray-200 leading-relaxed">
+        Vanguard Assurance provides tailored insurance solutions for individuals and businesses across Ghana with over a decade of trusted expertise.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="#personal" class="btn-primary bg-gradient-to-r from-red-500 to-red-600 text-white font-bold px-10 py-5 rounded-xl hover:from-red-600 hover:to-red-700 transition inline-block shadow-2xl text-lg">
+          Explore Services
+        </a>
+        <a href="#contact" class="btn-primary bg-white text-blue-900 font-bold px-10 py-5 rounded-xl hover:bg-gray-100 transition inline-block shadow-2xl text-lg">
+          Get a Quote
+        </a>
+      </div>
+      
+      <!-- Trust Indicators -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="text-4xl font-bold text-yellow-400 mb-2">10+</div>
+          <p class="text-sm text-gray-300">Years Experience</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-yellow-400 mb-2">50K+</div>
+          <p class="text-sm text-gray-300">Happy Clients</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-yellow-400 mb-2">24/7</div>
+          <p class="text-sm text-gray-300">Support</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-yellow-400 mb-2">98%</div>
+          <p class="text-sm text-gray-300">Satisfaction Rate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL -->
+  <section id="personal">
+    <div class="section-content">
+      <h2 class="section-title text-4xl md:text-5xl font-bold mb-6 text-center">Our Personal Insurance Services</h2>
+      <p class="text-center text-gray-300 mb-16 max-w-2xl mx-auto text-lg">Comprehensive coverage options designed to protect what matters most to you and your family.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Motor Insurance -->
+        <div class="service-card bg-white rounded-2xl shadow-2xl p-8 text-gray-800">
+          <div class="card-icon mb-6">
+            <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">Motor Insurance</h3>
+          <p class="mb-6 text-gray-600">Comprehensive protection for your vehicle with customizable coverage options and 24/7 support.</p>
+          <ul class="text-sm space-y-3 mb-6 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Third-party & comprehensive coverage</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>24/7 roadside assistance</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Fast claim processing</span>
+            </li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition group">
+            Learn More 
+            <svg class="learn-more-arrow w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Travel Insurance -->
+        <div class="service-card bg-white rounded-2xl shadow-2xl p-8 text-gray-800">
+          <div class="card-icon mb-6">
+            <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">Travel Insurance</h3>
+          <p class="mb-6 text-gray-600">Stay protected while traveling with coverage for medical emergencies and trip interruptions.</p>
+          <ul class="text-sm space-y-3 mb-6 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Medical coverage abroad</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Trip cancellation protection</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Lost luggage coverage</span>
+            </li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition group">
+            Learn More 
+            <svg class="learn-more-arrow w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Home Insurance -->
+        <div class="service-card bg-white rounded-2xl shadow-2xl p-8 text-gray-800">
+          <div class="card-icon mb-6">
+            <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">Home Insurance</h3>
+          <p class="mb-6 text-gray-600">Protect your home and valuables against unexpected events and natural disasters.</p>
+          <ul class="text-sm space-y-3 mb-6 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Property damage coverage</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Theft & burglary protection</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Natural disaster coverage</span>
+            </li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition group">
+            Learn More 
+            <svg class="learn-more-arrow w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Life Insurance -->
+        <div class="service-card bg-white rounded-2xl shadow-2xl p-8 text-gray-800">
+          <div class="card-icon mb-6">
+            <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">Life Insurance</h3>
+          <p class="mb-6 text-gray-600">Secure your family's financial future with our comprehensive life insurance plans.</p>
+          <ul class="text-sm space-y-3 mb-6 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Term & whole life insurance</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Family protection plans</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Flexible premium options</span>
+            </li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition group">
+            Learn More 
+            <svg class="learn-more-arrow w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Health Insurance -->
+        <div class="service-card bg-white rounded-2xl shadow-2xl p-8 text-gray-800">
+          <div class="card-icon mb-6">
+            <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">Health Insurance</h3>
+          <p class="mb-6 text-gray-600">Access quality healthcare with our flexible and comprehensive health insurance options.</p>
+          <ul class="text-sm space-y-3 mb-6 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Outpatient care coverage</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Hospitalization benefits</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Specialist consultations</span>
+            </li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition group">
+            Learn More 
+            <svg class="learn-more-arrow w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Personal Accident -->
+        <div class="service-card bg-white rounded-2xl shadow-2xl p-8 text-gray-800">
+          <div class="card-icon mb-6">
+            <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">Personal Accident</h3>
+          <p class="mb-6 text-gray-600">Comprehensive protection against accidents and injuries for you and your family.</p>
+          <ul class="text-sm space-y-3 mb-6 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Accidental death coverage</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Disability benefits</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Medical expense coverage</span>
+            </li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition group">
+            Learn More 
+            <svg class="learn-more-arrow w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPORATE -->
+  <section id="corporate">
+    <div class="section-content">
+      <h2 class="section-title text-4xl md:text-5xl font-bold mb-6 text-center">Corporate Solutions</h2>
+      <p class="text-center text-lg mb-16 max-w-3xl mx-auto text-gray-200">Custom coverage designed to protect your business assets, employees, and operations with tailored plans that fit your unique needs.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="glass-card rounded-2xl p-8">
+          <div class="glass-icon mb-4">
+            <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Business Insurance</h3>
+          <p class="mb-6 text-gray-200">Comprehensive protection for your business assets and operations.</p>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Property and equipment coverage
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Business interruption insurance
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Liability protection
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Professional indemnity
+            </li>
+          </ul>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8">
+          <div class="glass-icon mb-4">
+            <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Employee Benefits</h3>
+          <p class="mb-6 text-gray-200">Attractive benefit packages to attract and retain top talent.</p>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Group life insurance
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Group health plans
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Pension schemes
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Workmen's compensation
+            </li>
+          </ul>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8">
+          <div class="glass-icon mb-4">
+            <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Fleet Insurance</h3>
+          <p class="mb-6 text-gray-200">Cost-effective coverage for multiple vehicles in your fleet.</p>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Commercial vehicle coverage
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Fleet management support
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Goods in transit insurance
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Competitive group rates
+            </li>
+          </ul>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8">
+          <div class="glass-icon mb-4">
+            <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Liability Coverage</h3>
+          <p class="mb-6 text-gray-200">Protect your business from legal claims and lawsuits.</p>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Public liability insurance
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Product liability coverage
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Employer's liability
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-400 mr-2 font-bold">•</span>
+              Directors & officers insurance
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- NEW: Testimonials Section -->
+  <section id="testimonials">
+    <div class="section-content">
+      <h2 class="section-title text-4xl md:text-5xl font-bold mb-6 text-center">What Our Clients Say</h2>
+      <p class="text-center text-lg mb-16 max-w-3xl mx-auto text-gray-200">Hear from thousands of satisfied clients who trust us</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="testimonial-card rounded-2xl p-8">
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-2xl font-bold">KA</div>
+            <div class="ml-4">
+              <h4 class="font-bold text-lg">Kwame Asante</h4>
+              <p class="text-sm text-gray-400">Business Owner, Accra</p>
+            </div>
+          </div>
+          <div class="mb-4"><span class="text-yellow-400 text-2xl">★★★★★</span></div>
+          <p class="text-gray-300 italic">"Exceptional service for 5 years. Claims processed quickly. Highly recommended!"</p>
+        </div>
+
+        <div class="testimonial-card rounded-2xl p-8">
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-2xl font-bold">AM</div>
+            <div class="ml-4">
+              <h4 class="font-bold text-lg">Ama Mensah</h4>
+              <p class="text-sm text-gray-400">Teacher, Kumasi</p>
+            </div>
+          </div>
+          <div class="mb-4"><span class="text-yellow-400 text-2xl">★★★★★</span></div>
+          <p class="text-gray-300 italic">"Smooth claims process after car accident. Professional handling. Got settlement within days!"</p>
+        </div>
+
+        <div class="testimonial-card rounded-2xl p-8">
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-2xl font-bold">YO</div>
+            <div class="ml-4">
+              <h4 class="font-bold text-lg">Yaw Osei</h4>
+              <p class="text-sm text-gray-400">Engineer, Takoradi</p>
+            </div>
+          </div>
+          <div class="mb-4"><span class="text-yellow-400 text-2xl">★★★★★</span></div>
+          <p class="text-gray-300 italic">"Travel insurance saved me during medical emergency abroad. 24/7 support was excellent!"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- NEW: News Section -->
+  <section id="news">
+    <div class="section-content">
+      <h2 class="section-title text-4xl md:text-5xl font-bold mb-6 text-center">Latest News & Updates</h2>
+      <p class="text-center text-lg mb-16 max-w-3xl mx-auto text-gray-200">Stay informed about our latest developments</p>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="lg:col-span-2 news-card rounded-2xl p-10">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-4 py-1 bg-red-500 rounded-full text-sm font-semibold">FEATURED</span>
+            <span class="text-sm text-gray-400">February 1, 2026</span>
+          </div>
+          <h3 class="text-3xl font-bold mb-4">New Mobile App with AI-Powered Claims Processing</h3>
+          <p class="text-gray-300 mb-6">Revolutionary app featuring AI claims processing, instant submissions, real-time updates, and 24/7 virtual assistant.</p>
+          <a href="#contact" class="inline-flex items-center text-yellow-400 font-semibold hover:text-yellow-300">
+            Read Full Story →
+          </a>
+        </div>
+
+        <div class="news-card rounded-2xl p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-4 py-1 bg-blue-500 rounded-full text-xs font-semibold">PRODUCT</span>
+            <span class="text-sm text-gray-400">Jan 28, 2026</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3">FlexiHealth: Customizable Plans</h3>
+          <p class="text-sm text-gray-300 mb-4">New health insurance with customizable coverage including dental, vision, and alternative medicine.</p>
+          <a href="#contact" class="text-blue-400 text-sm font-semibold">Learn More →</a>
+        </div>
+
+        <div class="news-card rounded-2xl p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-4 py-1 bg-green-500 rounded-full text-xs font-semibold">COMMUNITY</span>
+            <span class="text-sm text-gray-400">Jan 25, 2026</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3">1,000 Students Scholarship Program</h3>
+          <p class="text-sm text-gray-300 mb-4">Supporting education across Ghana with scholarships to empower the next generation.</p>
+          <a href="#contact" class="text-blue-400 text-sm font-semibold">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-content">
+      <h2 class="section-title text-4xl md:text-5xl font-bold mb-6 text-center">About Vanguard Assurance</h2>
+      <div class="max-w-4xl mx-auto">
+        <p class="text-xl mb-12 text-center leading-relaxed">
+          Vanguard Assurance has been offering reliable insurance services across Ghana for over a decade. Our mission is to provide peace of mind through clear, transparent, and affordable insurance solutions for both individuals and businesses.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
+          <div class="text-center">
+            <div class="stat-number text-6xl font-bold mb-3 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">10+</div>
+            <p class="text-xl font-semibold">Years of Experience</p>
+          </div>
+          <div class="text-center">
+            <div class="stat-number text-6xl font-bold mb-3 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">50K+</div>
+            <p class="text-xl font-semibold">Happy Clients</p>
+          </div>
+          <div class="text-center">
+            <div class="stat-number text-6xl font-bold mb-3 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">24/7</div>
+            <p class="text-xl font-semibold">Customer Support</p>
+          </div>
+        </div>
+
+        <div class="mt-16 glass-card rounded-2xl p-10">
+          <h3 class="text-3xl font-bold mb-8 text-center">Why Choose Us?</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex items-start space-x-4">
+              <div class="text-yellow-400 text-2xl">✓</div>
+              <div>
+                <h4 class="font-bold text-lg mb-2">Trusted Expertise</h4>
+                <p class="text-sm text-gray-200">Over a decade of experience in the insurance industry with proven track record.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="text-yellow-400 text-2xl">✓</div>
+              <div>
+                <h4 class="font-bold text-lg mb-2">Customer First</h4>
+                <p class="text-sm text-gray-200">Your satisfaction and peace of mind is our top priority in everything we do.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="text-yellow-400 text-2xl">✓</div>
+              <div>
+                <h4 class="font-bold text-lg mb-2">Fast Claims Processing</h4>
+                <p class="text-sm text-gray-200">Quick and hassle-free claims processing to get you back on track faster.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="text-yellow-400 text-2xl">✓</div>
+              <div>
+                <h4 class="font-bold text-lg mb-2">Competitive Rates</h4>
+                <p class="text-sm text-gray-200">Affordable premiums without compromising on coverage quality or service.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section id="resources">
+    <div class="section-content">
+      <h2 class="section-title text-4xl md:text-5xl font-bold mb-6 text-center">Resources & Information</h2>
+      <p class="text-center text-lg mb-16 max-w-3xl mx-auto text-gray-200">Access helpful resources to understand insurance better and make informed decisions about your coverage needs.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="glass-card rounded-2xl p-8 group cursor-pointer">
+          <div class="glass-icon mb-4">
+            <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Insurance Guides</h3>
+          <p class="mb-6 text-sm text-gray-200">Learn about different types of insurance and what coverage you need.</p>
+          <a href="#contact" class="inline-flex items-center text-yellow-400 font-semibold hover:text-yellow-300 transition group">
+            Read More 
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 group cursor-pointer">
+          <div class="glass-icon mb-4">
+            <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">FAQs</h3>
+          <p class="mb-6 text-sm text-gray-200">Find answers to common questions about our policies and services.</p>
+          <a href="#contact" class="inline-flex items-center text-yellow-400 font-semibold hover:text-yellow-300 transition group">
+            View FAQs 
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 group cursor-pointer">
+          <div class="glass-icon mb-4">
+            <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Policy Documents</h3>
+          <p class="mb-6 text-sm text-gray-200">Download policy documents, forms, and terms & conditions.</p>
+          <a href="#contact" class="inline-flex items-center text-yellow-400 font-semibold hover:text-yellow-300 transition group">
+            Download 
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 group cursor-pointer">
+          <div class="glass-icon mb-4">
+            <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Insurance Calculator</h3>
+          <p class="mb-6 text-sm text-gray-200">Estimate your insurance needs with our easy-to-use calculators.</p>
+          <a href="#contact" class="inline-flex items-center text-yellow-400 font-semibold hover:text-yellow-300 transition group">
+            Calculate 
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 group cursor-pointer">
+          <div class="glass-icon mb-4">
+            <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Mobile App</h3>
+          <p class="mb-6 text-sm text-gray-200">Manage your policies on the go with our mobile application.</p>
+          <a href="#contact" class="inline-flex items-center text-yellow-400 font-semibold hover:text-yellow-300 transition group">
+            Download App 
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 group cursor-pointer">
+          <div class="glass-icon mb-4">
+            <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Blog & News</h3>
+          <p class="mb-6 text-sm text-gray-200">Stay updated with the latest insurance news and industry insights.</p>
+          <a href="#contact" class="inline-flex items-center text-yellow-400 font-semibold hover:text-yellow-300 transition group">
+            Read Blog 
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-content">
+      <h2 class="section-title text-4xl md:text-5xl font-bold mb-6 text-center">Get in Touch</h2>
+      <p class="text-center text-lg mb-16 max-w-2xl mx-auto text-gray-200">Have questions? Need a quote? Our team is ready to help you find the perfect insurance solution tailored to your needs.</p>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <!-- Contact Form -->
+        <div class="glass-card rounded-2xl p-10">
+          <h3 class="text-2xl font-bold mb-8">Send us a Message</h3>
+          <form class="space-y-6">
+            <div>
+              <label class="block mb-2 text-sm font-semibold">Full Name</label>
+              <input type="text" class="form-input w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 focus:outline-none focus:border-yellow-400 transition text-white placeholder-gray-400" placeholder="John Doe" required>
+            </div>
+            <div>
+              <label class="block mb-2 text-sm font-semibold">Email Address</label>
+              <input type="email" class="form-input w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 focus:outline-none focus:border-yellow-400 transition text-white placeholder-gray-400" placeholder="john@example.com" required>
+            </div>
+            <div>
+              <label class="block mb-2 text-sm font-semibold">Phone Number</label>
+              <input type="tel" class="form-input w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 focus:outline-none focus:border-yellow-400 transition text-white placeholder-gray-400" placeholder="+233 123 456 789">
+            </div>
+            <div>
+              <label class="block mb-2 text-sm font-semibold">Service Interest</label>
+              <select class="form-input w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 focus:outline-none focus:border-yellow-400 transition text-white" required>
+                <option class="text-gray-900" value="">Select a service</option>
+                <option class="text-gray-900" value="motor">Motor Insurance</option>
+                <option class="text-gray-900" value="travel">Travel Insurance</option>
+                <option class="text-gray-900" value="home">Home Insurance</option>
+                <option class="text-gray-900" value="life">Life Insurance</option>
+                <option class="text-gray-900" value="health">Health Insurance</option>
+                <option class="text-gray-900" value="corporate">Corporate Solutions</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-2 text-sm font-semibold">Your Message</label>
+              <textarea rows="4" class="form-input w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 focus:outline-none focus:border-yellow-400 transition text-white placeholder-gray-400" placeholder="Tell us how we can help you..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary pulse-button w-full bg-gradient-to-r from-red-500 to-red-600 text-white font-bold px-8 py-5 rounded-xl hover:from-red-600 hover:to-red-700 transition shadow-2xl text-lg">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="space-y-6">
+          <div class="glass-card rounded-2xl p-8">
+            <div class="flex items-start space-x-5">
+              <div class="text-4xl">📧</div>
+              <div>
+                <h4 class="font-bold text-lg mb-2">Email Us</h4>
+                <p class="text-gray-200 mb-1">info@vanguardassurance.com</p>
+                <p class="text-gray-200">support@vanguardassurance.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-8">
+            <div class="flex items-start space-x-5">
+              <div class="text-4xl">📞</div>
+              <div>
+                <h4 class="font-bold text-lg mb-2">Call Us</h4>
+                <p class="text-gray-200 mb-1">+233 123 456 789</p>
+                <p class="text-gray-200">+233 987 654 321</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-8">
+            <div class="flex items-start space-x-5">
+              <div class="text-4xl">📍</div>
+              <div>
+                <h4 class="font-bold text-lg mb-2">Visit Us</h4>
+                <p class="text-gray-200">123 Independence Avenue</p>
+                <p class="text-gray-200">Accra, Ghana</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-8">
+            <div class="flex items-start space-x-5">
+              <div class="text-4xl">⏰</div>
+              <div>
+                <h4 class="font-bold text-lg mb-2">Business Hours</h4>
+                <p class="text-gray-200 mb-1">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                <p class="text-gray-200">Saturday: 9:00 AM - 2:00 PM</p>
+                <p class="text-gray-200 text-sm mt-2">Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gradient-to-b from-gray-900 to-black text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center space-x-3 mb-6">
+            <img src="Logos/logo_dark.png" alt="Vanguard Logo" class="h-12 w-auto">
+          </div>
+          <h3 class="text-xl font-bold mb-4">Vanguard Assurance</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Your trusted insurance partner in Ghana. Providing peace of mind and comprehensive coverage since 2014.</p>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-6 text-lg">Quick Links</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="#home" class="hover:text-yellow-400 transition">Home</a></li>
+            <li><a href="#personal" class="hover:text-yellow-400 transition">Personal Insurance</a></li>
+            <li><a href="#corporate" class="hover:text-yellow-400 transition">Corporate Solutions</a></li>
+            <li><a href="#about" class="hover:text-yellow-400 transition">About Us</a></li>
+            <li><a href="#resources" class="hover:text-yellow-400 transition">Resources</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-6 text-lg">Our Services</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="#personal" class="hover:text-yellow-400 transition">Motor Insurance</a></li>
+            <li><a href="#personal" class="hover:text-yellow-400 transition">Travel Insurance</a></li>
+            <li><a href="#personal" class="hover:text-yellow-400 transition">Home Insurance</a></li>
+            <li><a href="#personal" class="hover:text-yellow-400 transition">Life Insurance</a></li>
+            <li><a href="#corporate" class="hover:text-yellow-400 transition">Business Insurance</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-6 text-lg">Connect With Us</h4>
+          <div class="flex space-x-4 mb-6">
+            <a href="#" class="text-3xl hover:text-yellow-400 transition transform hover:scale-110">📘</a>
+            <a href="#" class="text-3xl hover:text-yellow-400 transition transform hover:scale-110">🐦</a>
+            <a href="#" class="text-3xl hover:text-yellow-400 transition transform hover:scale-110">📷</a>
+            <a href="#" class="text-3xl hover:text-yellow-400 transition transform hover:scale-110">💼</a>
+          </div>
+          <p class="text-sm text-gray-400 mb-3">Subscribe to our newsletter</p>
+          <div class="flex">
+            <input type="email" placeholder="Your email" class="px-4 py-3 bg-gray-800 rounded-l-lg text-sm flex-1 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            <button class="bg-gradient-to-r from-red-500 to-red-600 px-6 py-3 rounded-r-lg hover:from-red-600 hover:to-red-700 transition text-sm font-semibold">Join</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-8 text-center">
+        <p class="text-sm text-gray-400">&copy; 2025 Vanguard Assurance. All rights reserved.</p>
+        <div class="mt-4 space-x-6 text-sm">
+          <a href="#" class="text-gray-400 hover:text-yellow-400 transition">Privacy Policy</a>
+          <span class="text-gray-600">•</span>
+          <a href="#" class="text-gray-400 hover:text-yellow-400 transition">Terms of Service</a>
+          <span class="text-gray-600">•</span>
+          <a href="#" class="text-gray-400 hover:text-yellow-400 transition">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Form submission
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Basic form validation
+      const name = form.querySelector('input[type="text"]').value;
+      const email = form.querySelector('input[type="email"]').value;
+      const service = form.querySelector('select').value;
+      const message = form.querySelector('textarea').value;
+      
+      if (name && email && service && message) {
+        alert('Thank you for your message! Our team will get back to you within 24 hours.');
+        form.reset();
+      } else {
+        alert('Please fill in all required fields.');
+      }
+    });
+
+    // Smooth scroll offset for fixed header
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 100;
+          const targetPosition = target.offsetTop - offset;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Add intersection observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all service cards and glass cards
+    document.querySelectorAll('.service-card, .glass-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+  </script>
+
+</body>
+</html>
