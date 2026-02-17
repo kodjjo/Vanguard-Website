@@ -6,77 +6,68 @@
   <title>Vanguard Assurance - Reliable Insurance Solutions</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-/* ========================================
-   MODERN STRAIGHT DESIGN - REPLACE YOUR SECTION CSS
+    /* Custom Font */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ========================================
+   FULL-WIDTH HIGH-RESOLUTION SLIDESHOW
    ======================================== */
 
-/* Custom Font */
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background: #0F172A;
-}
-
-html {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
-/* Smooth animations */
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* ========================================
-   SLIDESHOW (Keep as is)
-   ======================================== */
-
+/* Container that holds the entire slideshow - FULL WIDTH */
 .slideshow-container {
   position: relative;
-  width: 100vw;
-  height: 700px;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  width: 100vw; /* Full viewport width - edge to edge */
+  height: 700px; /* Base height */
+  margin-left: calc(-50vw + 50%); /* Break out of centered container */
+  margin-right: calc(-50vw + 50%); /* Break out of centered container */
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  margin-top: -11rem;
   margin-bottom: 3rem;
 }
 
+/* Make slideshow taller and more dramatic on larger screens */
 @media (min-width: 768px) {
   .slideshow-container {
-    height: 80vh;
+    height: 80vh; /* 80% of screen height on tablets */
     max-height: 900px;
   }
 }
 
 @media (min-width: 1024px) {
   .slideshow-container {
-    height: 85vh;
+    height: 85vh; /* 85% of screen height on desktops */
     max-height: 1000px;
   }
 }
 
+/* Each individual slide (image) - HIGH RESOLUTION */
 .slide {
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  background-size: cover;
-  background-position: center center;
+  transition: opacity 1.5s ease-in-out; /* Slower, smoother transition */
+  background-size: cover; /* Makes image cover entire area */
+  background-position: center center; /* Centers the image */
   background-repeat: no-repeat;
+  /* Add this for sharper images */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
 }
 
+/* The currently visible slide */
 .slide.active {
   opacity: 1;
 }
 
+/* Dark overlay so text is readable on images */
 .slide-overlay {
   position: absolute;
   top: 0;
@@ -92,6 +83,7 @@ html {
   text-align: center;
 }
 
+/* Make text larger on big screens */
 .slide-overlay h2 {
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
@@ -100,6 +92,7 @@ html {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* Navigation dots at the bottom */
 .slideshow-dots {
   position: absolute;
   bottom: 40px;
@@ -132,6 +125,7 @@ html {
   transform: scale(1.2);
 }
 
+/* Left and right arrow buttons - bigger and more visible */
 .slideshow-arrow {
   position: absolute;
   top: 50%;
@@ -162,6 +156,7 @@ html {
   right: 30px;
 }
 
+/* Hide arrows on small mobile screens */
 @media (max-width: 640px) {
   .slideshow-arrow {
     padding: 0.75rem;
@@ -176,106 +171,719 @@ html {
   }
 }
 
-/* ========================================
-   MODERN STRAIGHT SECTIONS WITH SEPARATORS
+    /* Smooth animations */
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Diagonal sections with better spacing */
+    section {
+      position: relative;
+      padding: 140px 0 100px 0;
+    }
+
+    /* Professional gradient backgrounds */
+    #home { 
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%); 
+      padding-bottom: 180px;
+    }
+    #personal { 
+      background: linear-gradient(135deg, #374151 0%, #4B5563 50%, #6B7280 100%);
+      clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); 
+      margin-top: -120px;
+      padding-top: 180px;
+      padding-bottom: 180px;
+    }
+    #corporate { 
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%);
+      clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); 
+      margin-top: -120px;
+      padding-top: 180px;
+      padding-bottom: 180px;
+    }
+    #about { 
+      background: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #F87171 100%);
+      clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); 
+      margin-top: -120px;
+      padding-top: 180px;
+      padding-bottom: 180px;
+    }
+    #resources { 
+      background: linear-gradient(135deg, #374151 0%, #4B5563 50%, #6B7280 100%);
+      clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); 
+      margin-top: -120px;
+      padding-top: 180px;
+      padding-bottom: 180px;
+    }
+    #contact { 
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%);
+      clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%); 
+      margin-top: -120px;
+      padding-top: 180px;
+    }
+
+    /* Text styling */
+    .section-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      color: white;
+    }
+
+    /* Professional header */
+    header {
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(20px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    header.scrolled {
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    /* Logo animation */
+    .logo-container {
+      transition: transform 0.3s ease;
+    }
+
+    .logo-container:hover {
+      transform: scale(1.05);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    /* Enhanced card hover effects */
+    .service-card {
+      position: relative;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+      border-radius: 1rem;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: -1;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, #3B82F6, #8B5CF6, #EC4899);
+      border-radius: 1rem;
+      opacity: 0;
+      z-index: -2;
+      transition: opacity 0.5s ease;
+      filter: blur(10px);
+    }
+
+    .service-card:hover {
+      transform: translateY(-20px) scale(1.03) rotateX(2deg);
+      box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(59, 130, 246, 0.3),
+        0 0 40px rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.8);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card:hover::after {
+      opacity: 0.6;
+    }
+
+    .service-card:hover .card-icon {
+      transform: scale(1.2) rotateY(360deg);
+      filter: drop-shadow(0 10px 20px rgba(59, 130, 246, 0.4));
+    }
+
+    .card-icon {
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-block;
+    }
+
+    .service-card:hover .learn-more-arrow {
+      transform: translateX(8px);
+    }
+
+    /* Button hover effects */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn-primary:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Stat counter animation */
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .stat-number {
+      animation: countUp 1s ease-out;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    /* Form focus effects */
+    .form-input {
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+    }
+
+    /* Custom scrollbar */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #3B82F6 #0F172A;
+    }
+
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0F172A;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #3B82F6, #1E3A8A);
+      border-radius: 6px;
+      border: 2px solid #0F172A;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #60A5FA, #3B82F6);
+    }
+
+    /* Icon animations */
+    .icon-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Glassmorphism effect */
+    .glass-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+      );
+      transform: rotate(45deg);
+      transition: all 0.6s ease;
+    }
+
+    .glass-card:hover::before {
+      left: 100%;
+    }
+
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(251, 191, 36, 0.5);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(251, 191, 36, 0.3),
+        0 0 30px rgba(251, 191, 36, 0.2);
+    }
+
+    .glass-card:hover .glass-icon {
+      transform: scale(1.15) rotate(5deg);
+      filter: drop-shadow(0 5px 15px rgba(251, 191, 36, 0.5));
+    }
+
+    .glass-icon {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-block;
+    }
+
+    /* Pulse animation for CTA */
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+      50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    }
+
+    .pulse-button {
+      animation: pulse 2s infinite;
+    }
+
+    /* Navigation link underline effect */
+    .nav-link {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FBBF24;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Section title underline */
+    .section-title {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 16px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #FBBF24, #F59E0B);
+      border-radius: 2px;
+    }
+
+    /* Section backgrounds */
+
+    #personal { background: linear-gradient(135deg, #374151 0%, #4B5563 50%, #6B7280 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #corporate { background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #testimonials { background: linear-gradient(135deg, #374151 0%, #4B5563 50%, #6B7280 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #accolades { background: linear-gradient(135deg, #059669 0%, #10B981 50%, #34D399 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #news { background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #about { background: linear-gradient(135deg, #B45309 0%, #D97706 50%, #F59E0B 100%);}
+    #resources { background: linear-gradient(135deg, #374151 0%, #4B5563 50%, #6B7280 100%); clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin-top: -120px; padding-top: 180px; padding-bottom: 180px; }
+    #contact { background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%); clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%); margin-top: -120px; padding-top: 180px; }
+    
+    .section-content { max-width: 1280px; margin: 0 auto; padding: 0 24px; color: white; }
+
+        /* Testimonial cards */
+    .testimonial-card { position: relative; background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .testimonial-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.12); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+
+        /* News cards */
+    .news-card { position: relative; background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; overflow: hidden; }
+    .news-card::after { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 0; background: linear-gradient(180deg, #3B82F6, #60A5FA); transition: height 0.4s ease; }
+    .news-card:hover { transform: translateX(5px); background: rgba(255, 255, 255, 0.12); }
+    .news-card:hover::after { height: 100%; }
+
+  /* ========================================
+   GLASSMORPHISM PERSONAL INSURANCE SECTION
+   Add this to your existing CSS file
    ======================================== */
 
-section {
+/* Override the existing #personal section background to add pattern */
+#personal { 
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef3 100%);
+  clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); 
+  margin-top: -120px;
+  padding-top: 180px;
+  padding-bottom: 180px;
   position: relative;
-  padding: 100px 0;
   overflow: hidden;
 }
 
-/* Add decorative line separator between sections */
-section::after {
+/* Add elegant pattern background to personal section */
+#personal::before {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(200, 200, 200, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(180, 180, 180, 0.1) 0%, transparent 50%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 60px,
+      rgba(0, 0, 0, 0.015) 60px,
+      rgba(0, 0, 0, 0.015) 120px
+    );
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Remove separator from last section */
-#contact::after {
+#personal::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(150, 150, 150, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatSlow 25s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-40px, 40px) scale(1.15); }
+}
+
+/* Ensure content appears above patterns */
+#personal .section-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced section title for personal section */
+#personal .section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+/* Subtitle styling for personal section */
+#personal .section-subtitle {
+  color: #4a4a4a;
+  max-width: 600px;
+  margin: 0 auto 80px;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Grid for personal insurance cards */
+.personal-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  padding: 0 20px;
+}
+
+/* GLASSMORPHISM CARDS - Subtle effect with neutral grays */
+#personal .service-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  padding: 40px 32px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Remove old gradient overlays for personal section cards */
+#personal .service-card::before,
+#personal .service-card::after {
   display: none;
 }
 
-/* Hero Section */
-#home {
-  background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%);
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-
-/* Personal Section - Light Background */
-#personal {
-  background: linear-gradient(180deg, #F9FAFB 0%, #F3F4F6 100%);
-  color: #1F2937;
-}
-
-#personal .section-content {
-  color: #1F2937;
-}
-
-/* Corporate Section - Dark Blue */
-#corporate {
-  background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
-  position: relative;
-}
-
-#corporate::before {
+/* Top highlight line on glass cards */
+#personal .service-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(59,130,246,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-  opacity: 0.5;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.5), 
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: block;
 }
 
-/* Testimonials Section - Medium Gray */
-#testimonials {
-  background: linear-gradient(180deg, #374151 0%, #4B5563 100%);
+#personal .service-card:hover::before {
+  opacity: 1;
 }
 
-/* News Section - Dark Blue with Pattern */
-#news {
-  background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+/* Enhanced hover state for glassmorphism */
+#personal .service-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 20px 50px 0 rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Icon container - refined glassmorphism style */
+#personal .card-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 28px;
+  background: rgba(107, 107, 107, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  overflow: hidden;
 }
 
-/* About Section - Vibrant Red */
-#about {
-  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+/* Ripple effect on icon background */
+#personal .card-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(107, 107, 107, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
 }
 
-/* Resources Section - Gray */
-#resources {
-  background: linear-gradient(180deg, #4B5563 0%, #6B7280 100%);
+#personal .service-card:hover .card-icon::before {
+  width: 100%;
+  height: 100%;
 }
 
-/* Contact Section - Dark Blue */
-#contact {
-  background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
-  padding-bottom: 0;
-}
-
-/* Text styling */
-.section-content {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-  color: white;
+/* Icon styling - neutral gray tones */
+#personal .card-icon svg {
+  width: 32px;
+  height: 32px;
+  color: #6b6b6b;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   z-index: 1;
 }
 
-/* Add subtle animation on scroll */
-@keyframes fadeInUp {
+#personal .service-card:hover .card-icon {
+  transform: scale(1.08);
+  background: rgba(107, 107, 107, 0.15);
+}
+
+#personal .service-card:hover .card-icon svg {
+  transform: scale(1.1);
+  color: #1a1a1a;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+/* Card title - elegant serif */
+#personal .card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+}
+
+/* Card description */
+#personal .card-description {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  margin-bottom: 24px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Feature list */
+#personal .card-features {
+  list-style: none;
+  margin-bottom: 32px;
+  padding: 0;
+}
+
+#personal .card-features li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #6b6b6b;
+  transition: color 0.3s ease;
+}
+
+#personal .service-card:hover .card-features li {
+  color: #1a1a1a;
+}
+
+/* Checkmark styling */
+#personal .card-features .text-green-500 {
+  color: #6b6b6b;
+  margin-right: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+#personal .service-card:hover .card-features .text-green-500 {
+  transform: scale(1.15);
+  color: #1a1a1a;
+}
+
+/* Learn more link - clean and minimal */
+#personal .service-card a {
+  display: inline-flex;
+  align-items: center;
+  color: #6b6b6b;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.02em;
+}
+
+#personal .service-card a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #1a1a1a;
+  transition: width 0.4s ease;
+}
+
+#personal .service-card a:hover {
+  color: #1a1a1a;
+  transform: translateX(4px);
+}
+
+#personal .service-card a:hover::after {
+  width: calc(100% - 28px);
+}
+
+/* Arrow icon in links */
+#personal .learn-more-arrow {
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+#personal .service-card a:hover .learn-more-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .personal-services-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0;
+  }
+
+  #personal .section-subtitle {
+    margin-bottom: 60px;
+  }
+
+  #personal .service-card {
+    padding: 32px 24px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .personal-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Staggered fade-in animation for cards */
+@keyframes cardFadeIn {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -286,342 +894,303 @@ section::after {
   }
 }
 
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out;
+#personal .service-card {
+  opacity: 0;
+  animation: cardFadeIn 0.6s ease forwards;
+  animation-delay: calc(var(--card-index) * 0.1s);
 }
 
-/* Professional header */
-header {
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(20px);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
+#personal .service-card:nth-child(1) { --card-index: 1; }
+#personal .service-card:nth-child(2) { --card-index: 2; }
+#personal .service-card:nth-child(3) { --card-index: 3; }
+#personal .service-card:nth-child(4) { --card-index: 4; }
+#personal .service-card:nth-child(5) { --card-index: 5; }
+#personal .service-card:nth-child(6) { --card-index: 6; }
 
-header.scrolled {
-  background: rgba(15, 23, 42, 0.98);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(59, 130, 246, 0.4);
-}
+/* ========================================
+   GLASSMORPHISM TESTIMONIALS SECTION
+   ======================================== */
 
-/* Logo animation */
-.logo-container {
-  transition: transform 0.3s ease;
-}
-
-.logo-container:hover {
-  transform: scale(1.05);
-}
-
-/* Mobile menu */
-.mobile-menu {
-  transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mobile-menu.active {
-  transform: translateX(0);
-}
-
-/* Enhanced card hover effects */
-.service-card {
+#testimonials {
+  background: linear-gradient(135deg, #1F2937 0%, #374151 50%, #4B5563 100%);
+  clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
+  margin-top: -120px;
+  padding-top: 180px;
+  padding-bottom: 180px;
   position: relative;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* Add elegant pattern background */
+#testimonials::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 30% 20%, rgba(200, 200, 200, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(180, 180, 180, 0.06) 0%, transparent 50%),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 60px,
+      rgba(255, 255, 255, 0.02) 60px,
+      rgba(255, 255, 255, 0.02) 120px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+#testimonials::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(200, 200, 200, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatSlow 25s ease-in-out infinite;
+}
+
+/* Ensure content appears above patterns */
+#testimonials .section-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced section title */
+#testimonials .section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+/* GLASSMORPHISM TESTIMONIAL CARDS */
+.testimonial-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  padding: 40px 32px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
   transform-style: preserve-3d;
   perspective: 1000px;
 }
 
-.service-card::before {
+/* Top highlight line on glass cards */
+.testimonial-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
-  border-radius: 1rem;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.5), 
+    transparent
+  );
   opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: -1;
+  transition: opacity 0.4s ease;
 }
 
-.service-card::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(135deg, #3B82F6, #8B5CF6, #EC4899);
-  border-radius: 1rem;
-  opacity: 0;
-  z-index: -2;
-  transition: opacity 0.5s ease;
-  filter: blur(10px);
-}
-
-.service-card:hover {
-  transform: translateY(-20px) scale(1.03) rotateX(2deg);
-  box-shadow: 
-    0 30px 60px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(59, 130, 246, 0.3),
-    0 0 40px rgba(59, 130, 246, 0.2);
-  border-color: rgba(59, 130, 246, 0.8);
-}
-
-.service-card:hover::before {
+.testimonial-card:hover::before {
   opacity: 1;
 }
 
-.service-card:hover::after {
-  opacity: 0.6;
-}
-
-.service-card:hover .card-icon {
-  transform: scale(1.2) rotateY(360deg);
-  filter: drop-shadow(0 10px 20px rgba(59, 130, 246, 0.4));
-}
-
-.card-icon {
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-block;
-}
-
-.service-card:hover .learn-more-arrow {
-  transform: translateX(8px);
-}
-
-/* Button hover effects */
-.btn-primary {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
-}
-
-.btn-primary:hover::before {
-  width: 300px;
-  height: 300px;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Stat counter animation */
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.stat-number {
-  animation: countUp 1s ease-out;
-}
-
-/* Form focus effects */
-.form-input {
-  transition: all 0.3s ease;
-}
-
-.form-input:focus {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
-}
-
-/* Custom scrollbar */
-html {
-  scrollbar-width: thin;
-  scrollbar-color: #3B82F6 #0F172A;
-}
-
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0F172A;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #3B82F6, #1E3A8A);
-  border-radius: 6px;
-  border: 2px solid #0F172A;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #60A5FA, #3B82F6);
-}
-
-/* Icon animations */
-.icon-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-/* Glassmorphism effect */
-.glass-card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
-
-.glass-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
-  transform: rotate(45deg);
-  transition: all 0.6s ease;
-}
-
-.glass-card:hover::before {
-  left: 100%;
-}
-
-.glass-card:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(251, 191, 36, 0.5);
-  transform: translateY(-8px) scale(1.02);
+/* Enhanced hover state */
+.testimonial-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(251, 191, 36, 0.3),
-    0 0 30px rgba(251, 191, 36, 0.2);
+    0 20px 50px 0 rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
-.glass-card:hover .glass-icon {
-  transform: scale(1.15) rotate(5deg);
-  filter: drop-shadow(0 5px 15px rgba(251, 191, 36, 0.5));
+/* Avatar styling with glassmorphism */
+.testimonial-card .w-16 {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.glass-icon {
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-block;
+.testimonial-card:hover .w-16 {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Pulse animation for CTA */
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
-  50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+/* Name styling */
+.testimonial-card h4 {
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-.pulse-button {
-  animation: pulse 2s infinite;
+/* Stars with glow effect on hover */
+.testimonial-card .text-yellow-400 {
+  transition: all 0.3s ease;
 }
 
-/* Navigation link underline effect */
-.nav-link {
-  position: relative;
-  padding-bottom: 4px;
+.testimonial-card:hover .text-yellow-400 {
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.5));
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #FBBF24;
-  transition: width 0.3s ease;
+/* Quote text */
+.testimonial-card p.italic {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-weight: 300;
+  transition: color 0.3s ease;
 }
 
-.nav-link:hover::after {
-  width: 100%;
+.testimonial-card:hover p.italic {
+  color: rgba(255, 255, 255, 0.95);
 }
 
-/* Section title underline */
-.section-title {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 16px;
+/* Staggered fade-in animation */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #FBBF24, #F59E0B);
-  border-radius: 2px;
+.testimonial-card {
+  opacity: 0;
+  animation: cardFadeIn 0.6s ease forwards;
+  animation-delay: calc(var(--card-index) * 0.15s);
 }
 
-/* Testimonial cards */
-.testimonial-card { 
-  position: relative; 
-  background: rgba(255, 255, 255, 0.08); 
-  backdrop-filter: blur(10px); 
-  border: 1px solid rgba(255, 255, 255, 0.15); 
-  transition: all 0.4s ease; 
+.testimonial-card:nth-child(1) { --card-index: 1; }
+.testimonial-card:nth-child(2) { --card-index: 2; }
+.testimonial-card:nth-child(3) { --card-index: 3; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #testimonials {
+    margin-top: -80px;
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+
+  .testimonial-card {
+    padding: 32px 24px;
+  }
 }
 
-.testimonial-card:hover { 
-  transform: translateY(-5px); 
-  background: rgba(255, 255, 255, 0.12); 
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
+/* ================
+   insurance button
+   ================ */
+.button-container {
+    padding: 30px;
 }
 
-/* News cards */
-.news-card { 
-  position: relative; 
-  background: rgba(255, 255, 255, 0.08); 
-  backdrop-filter: blur(10px); 
-  border: 1px solid rgba(255, 255, 255, 0.15); 
-  transition: all 0.4s ease; 
-  overflow: hidden; 
+.insurance-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #4169e1;
+    background: #ffffff;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(65, 105, 225, 0.2);
 }
 
-.news-card::after { 
-  content: ''; 
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 4px; 
-  height: 0; 
-  background: linear-gradient(180deg, #3B82F6, #60A5FA); 
-  transition: height 0.4s ease; 
+.insurance-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #4169e1;
+    transition: left 0.4s ease;
+    z-index: 1;
 }
 
-.news-card:hover { 
-  transform: translateX(5px); 
-  background: rgba(255, 255, 255, 0.12); 
+.insurance-button:hover::before {
+    left: 0;
 }
 
-.news-card:hover::after { 
-  height: 100%; 
+.insurance-button:hover {
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(65, 105, 225, 0.4);
+    transform: translateY(-2px);
 }
+
+.insurance-button:hover .arrow {
+    animation: slideArrow 0.6s ease-in-out infinite;
+}
+
+.button-text {
+    position: relative;
+    z-index: 2;
+}
+
+.arrow {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+.arrow svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+@keyframes slideArrow {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(8px);
+    }
+}
+
+.insurance-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(65, 105, 225, 0.3);
+}
+
+.insurance-button:focus {
+    outline: 2px solid #4169e1;
+    outline-offset: 4px;
+}
+
   </style>
 </head>
 <body class="font-sans text-white">
@@ -633,17 +1202,32 @@ html {
         <img src="Logos/logo_dark.png" alt="Vanguard Assurance Logo" class="h-16 w-auto md:h-20 lg:h-24 drop-shadow-2xl"/>
       </div>
       
-      <!-- Desktop Navigation -->
-      <nav class="hidden lg:block">
-        <ul class="flex items-center space-x-10 text-base font-medium tracking-wide">
-          <li><a href="#home" class="nav-link hover:text-yellow-400 transition">Home</a></li>
-          <li><a href="#personal" class="nav-link hover:text-yellow-400 transition">Personal</a></li>
-          <li><a href="#corporate" class="nav-link hover:text-yellow-400 transition">Corporate</a></li>
-          <li><a href="#about" class="nav-link hover:text-yellow-400 transition">About</a></li>
-          <li><a href="#resources" class="nav-link hover:text-yellow-400 transition">Resources</a></li>
-          <li><a href="#contact" class="bg-gradient-to-r from-red-500 to-red-600 px-6 py-2.5 rounded-lg hover:from-red-600 hover:to-red-700 transition font-semibold shadow-lg">Contact</a></li>
-        </ul>
-      </nav>
+       <!-- Desktop Navigation -->
+  <nav class="hidden lg:block">
+<ul class="flex items-center space-x-10 text-base font-medium tracking-wide">
+
+  <li><a href="#home" class="nav-link hover:text-yellow-400 transition">Home</a></li>
+  <li><a href="#personal" class="nav-link hover:text-yellow-400 transition">Personal</a></li>
+  <li><a href="#corporate" class="nav-link hover:text-yellow-400 transition">Corporate</a></li>
+  <li><a href="#about" class="nav-link hover:text-yellow-400 transition">About</a></li>
+  <li><a href="#resources" class="nav-link hover:text-yellow-400 transition">Resources</a></li>
+
+  <li class="ml-6">
+    <a href="your-insurance-page.html" class="insurance-button">
+      <span class="button-text">Buy Insurance</span>
+      <span class="arrow">
+        <svg viewBox="0 0 24 24">
+          <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+        </svg>
+      </span>
+    </a>
+  </li>
+
+</ul>
+
+
+</nav>
+
 
       <!-- Mobile Menu Button -->
       <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none hover:text-yellow-400 transition">
@@ -676,8 +1260,7 @@ html {
   <!-- HERO -->
   <section id="home">
     <div class="section-content text-center pt-40 fade-in-up">
-
-        <!-- SLIDESHOW STARTS HERE -->
+      <!-- SLIDESHOW STARTS HERE -->
 <div class="slideshow-container">
   
   <!-- Slide 1 -->
@@ -736,14 +1319,14 @@ html {
 
 </div>
 <!-- SLIDESHOW ENDS HERE -->
-
       <div class="mb-6 inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
         <span class="text-sm font-semibold">🏆 Ghana's Trusted Insurance Provider</span>
       </div>
       <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
-        Reliable Insurance,<br/>
-        <span class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Peace of Mind</span>
+        Reliable Insurance<br/>
       </h1>
+              <span class="text-3xl bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">We Always Stand By You</span>
+
       <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-gray-200 leading-relaxed">
         Vanguard Assurance provides tailored insurance solutions for individuals and businesses across Ghana with over a decade of trusted expertise.
       </p>
@@ -778,24 +1361,26 @@ html {
     </div>
   </section>
 
-  <!-- PERSONAL -->
+<!-- PERSONAL INSURANCE SECTION - GLASSMORPHISM VERSION -->
+  <!-- PERSONAL INSURANCE SECTION - GLASSMORPHISM VERSION -->
   <section id="personal">
     <div class="section-content">
       <h2 class="section-title text-4xl md:text-5xl font-bold mb-6 text-center">Our Personal Insurance Services</h2>
-      <p class="text-center text-gray-300 mb-16 max-w-2xl mx-auto text-lg">Comprehensive coverage options designed to protect what matters most to you and your family.</p>
+      <p class="section-subtitle text-center text-lg">Comprehensive coverage options designed to protect what matters most to you and your family.</p>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="personal-services-grid">
+        
         <!-- Motor Insurance -->
-        <div class="service-card bg-white rounded-2xl shadow-2xl p-8 text-gray-800">
+        <div class="service-card">
           <div class="card-icon mb-6">
-            <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Motor Insurance</h3>
-          <p class="mb-6 text-gray-600">Comprehensive protection for your vehicle with customizable coverage options and 24/7 support.</p>
-          <ul class="text-sm space-y-3 mb-6 text-gray-700">
+          <h3 class="card-title text-2xl font-bold mb-4">Motor Insurance</h3>
+          <p class="card-description mb-6">Comprehensive protection for your vehicle with customizable coverage options and 24/7 support.</p>
+          <ul class="card-features text-sm space-y-3 mb-6">
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
               <span>Third-party & comprehensive coverage</span>
@@ -809,7 +1394,7 @@ html {
               <span>Fast claim processing</span>
             </li>
           </ul>
-          <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition group">
+          <a href="#contact" class="inline-flex items-center font-semibold transition group">
             Learn More 
             <svg class="learn-more-arrow w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -818,15 +1403,15 @@ html {
         </div>
 
         <!-- Travel Insurance -->
-        <div class="service-card bg-white rounded-2xl shadow-2xl p-8 text-gray-800">
+        <div class="service-card">
           <div class="card-icon mb-6">
-            <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Travel Insurance</h3>
-          <p class="mb-6 text-gray-600">Stay protected while traveling with coverage for medical emergencies and trip interruptions.</p>
-          <ul class="text-sm space-y-3 mb-6 text-gray-700">
+          <h3 class="card-title text-2xl font-bold mb-4">Travel Insurance</h3>
+          <p class="card-description mb-6">Stay protected while traveling with coverage for medical emergencies and trip interruptions.</p>
+          <ul class="card-features text-sm space-y-3 mb-6">
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
               <span>Medical coverage abroad</span>
@@ -840,7 +1425,7 @@ html {
               <span>Lost luggage coverage</span>
             </li>
           </ul>
-          <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition group">
+          <a href="#contact" class="inline-flex items-center font-semibold transition group">
             Learn More 
             <svg class="learn-more-arrow w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -849,15 +1434,15 @@ html {
         </div>
 
         <!-- Home Insurance -->
-        <div class="service-card bg-white rounded-2xl shadow-2xl p-8 text-gray-800">
+        <div class="service-card">
           <div class="card-icon mb-6">
-            <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Home Insurance</h3>
-          <p class="mb-6 text-gray-600">Protect your home and valuables against unexpected events and natural disasters.</p>
-          <ul class="text-sm space-y-3 mb-6 text-gray-700">
+          <h3 class="card-title text-2xl font-bold mb-4">Home Insurance</h3>
+          <p class="card-description mb-6">Protect your home and valuables against unexpected events and natural disasters.</p>
+          <ul class="card-features text-sm space-y-3 mb-6">
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
               <span>Property damage coverage</span>
@@ -871,7 +1456,7 @@ html {
               <span>Natural disaster coverage</span>
             </li>
           </ul>
-          <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition group">
+          <a href="#contact" class="inline-flex items-center font-semibold transition group">
             Learn More 
             <svg class="learn-more-arrow w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -880,15 +1465,15 @@ html {
         </div>
 
         <!-- Life Insurance -->
-        <div class="service-card bg-white rounded-2xl shadow-2xl p-8 text-gray-800">
+        <div class="service-card">
           <div class="card-icon mb-6">
-            <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Life Insurance</h3>
-          <p class="mb-6 text-gray-600">Secure your family's financial future with our comprehensive life insurance plans.</p>
-          <ul class="text-sm space-y-3 mb-6 text-gray-700">
+          <h3 class="card-title text-2xl font-bold mb-4">Life Insurance</h3>
+          <p class="card-description mb-6">Secure your family's financial future with our comprehensive life insurance plans.</p>
+          <ul class="card-features text-sm space-y-3 mb-6">
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
               <span>Term & whole life insurance</span>
@@ -902,7 +1487,7 @@ html {
               <span>Flexible premium options</span>
             </li>
           </ul>
-          <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition group">
+          <a href="#contact" class="inline-flex items-center font-semibold transition group">
             Learn More 
             <svg class="learn-more-arrow w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -911,15 +1496,15 @@ html {
         </div>
 
         <!-- Health Insurance -->
-        <div class="service-card bg-white rounded-2xl shadow-2xl p-8 text-gray-800">
+        <div class="service-card">
           <div class="card-icon mb-6">
-            <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Health Insurance</h3>
-          <p class="mb-6 text-gray-600">Access quality healthcare with our flexible and comprehensive health insurance options.</p>
-          <ul class="text-sm space-y-3 mb-6 text-gray-700">
+          <h3 class="card-title text-2xl font-bold mb-4">Health Insurance</h3>
+          <p class="card-description mb-6">Access quality healthcare with our flexible and comprehensive health insurance options.</p>
+          <ul class="card-features text-sm space-y-3 mb-6">
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
               <span>Outpatient care coverage</span>
@@ -933,7 +1518,7 @@ html {
               <span>Specialist consultations</span>
             </li>
           </ul>
-          <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition group">
+          <a href="#contact" class="inline-flex items-center font-semibold transition group">
             Learn More 
             <svg class="learn-more-arrow w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -942,15 +1527,15 @@ html {
         </div>
 
         <!-- Personal Accident -->
-        <div class="service-card bg-white rounded-2xl shadow-2xl p-8 text-gray-800">
+        <div class="service-card">
           <div class="card-icon mb-6">
-            <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Personal Accident</h3>
-          <p class="mb-6 text-gray-600">Comprehensive protection against accidents and injuries for you and your family.</p>
-          <ul class="text-sm space-y-3 mb-6 text-gray-700">
+          <h3 class="card-title text-2xl font-bold mb-4">Personal Accident</h3>
+          <p class="card-description mb-6">Comprehensive protection against accidents and injuries for you and your family.</p>
+          <ul class="card-features text-sm space-y-3 mb-6">
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✓</span>
               <span>Accidental death coverage</span>
@@ -964,13 +1549,14 @@ html {
               <span>Medical expense coverage</span>
             </li>
           </ul>
-          <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition group">
+          <a href="#contact" class="inline-flex items-center font-semibold transition group">
             Learn More 
             <svg class="learn-more-arrow w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
           </a>
         </div>
+
       </div>
     </div>
   </section>
@@ -1567,7 +2153,7 @@ function autoSlide() {
 // Function to reset the automatic sliding timer
 function resetSlideInterval() {
   clearInterval(slideInterval);
-  slideInterval = setInterval(autoSlide, 5000); // Change every 5 seconds
+  slideInterval = setInterval(autoSlide, 4000); // Change every 5 seconds
 }
 
 // Start the automatic sliding
